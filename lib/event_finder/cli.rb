@@ -13,6 +13,7 @@ class EventFinder::CLI
 
     def greeting
         #tree is not clean
+        #please work
         puts "~~~~~Hello, welcome to the EventFinder app!~~~~~"
     end
 
