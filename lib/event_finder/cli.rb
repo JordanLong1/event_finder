@@ -12,6 +12,7 @@ class EventFinder::CLI
     end
 
     def greeting
+        #what we want to call first
         puts "~~~~~Hello, welcome to the EventFinder app!~~~~~"
     end
 
