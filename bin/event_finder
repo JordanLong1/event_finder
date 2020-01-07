@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require './lib/event_finder'
+
+EventFinder::CLI.new.call
