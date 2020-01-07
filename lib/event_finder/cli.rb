@@ -14,6 +14,7 @@ class EventFinder::CLI
     def greeting
         #what we want to call first
         #trying to see if commit will work
+        #attempt number 3
         puts "~~~~~Hello, welcome to the EventFinder app!~~~~~"
     end
 
