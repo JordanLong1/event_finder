@@ -8,13 +8,17 @@ class EventFinder::CLI
         sleep 2
         listing
         sleep 2
+        # get_event_method
+        # sleep 2
         options
         sleep 2
         goodbye
     end
 
     def greeting
+        puts "================================================================="
         puts "~~~~~Hello, welcome to the Chico California EventFinder app!~~~~~"
+        puts "================================================================="
     end
 
     def location
@@ -26,19 +30,32 @@ class EventFinder::CLI
         puts "Here are the upcoming top events in your area:"
         @events = EventFinder::Scraper.scrape_bands_in_town
         @events.each.with_index(1) do |event, i|
-            # puts "#{i}. #{event.name} - #{event.pri} - #{event.availability}"
+            # puts "#{i}. #{event.name}"
         end
+
+        # def get_event_method
+        #     puts "Please enter the number of which event you'd like more info on!"
+        #     input = gets.strip
+        #     index = input.to_i - 1
+        #     if index.to_i.between?(0, 17)
+        #         binding.pry
+        #         @events[index]
+        #         # list event that corresponds with the number input
+        #     else
+        #         puts "I don't recognize that command, please enter a valid number."
+        #         get_event_method
+        #     end
+        # end
     end
 
     def options
         input = nil
         while input != "exit"
-            puts "Please enter the number of which event you'd like more info on! Type list if you'd like both displayed together or type exit to quit:"
             input = gets.strip.downcase
 
             if input.to_i > 0
                 the_event = @events[input.to_i - 1]
-                puts "#{the_event.name} - #{the_event.price} - #{the_event.availability}"
+                # puts "#{the_event.name} - #{the_event.location} - #{the_event.url}"
             elsif input == "list"
                 listing
             else
