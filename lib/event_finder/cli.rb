@@ -8,11 +8,13 @@ class EventFinder::CLI
         sleep 2
         listing
         sleep 2
+        options
+        sleep 2
         goodbye
     end
 
     def greeting
-        puts "~~~~~Hello, welcome to the San Francisco Bay Area EventFinder app!~~~~~"
+        puts "~~~~~Hello, welcome to the Chico California EventFinder app!~~~~~"
     end
 
     def location
@@ -31,7 +33,7 @@ class EventFinder::CLI
     def options
         input = nil
         while input != "exit"
-            puts "Enter the number 1 if you'd like more info on event 1, enter 2 if you'd like more information on event 2. Type list if you'd like both displayed together or type exit to quit:"
+            puts "Please enter the number of which event you'd like more info on! Type list if you'd like both displayed together or type exit to quit:"
             input = gets.strip.downcase
 
             if input.to_i > 0
