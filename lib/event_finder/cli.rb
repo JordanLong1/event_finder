@@ -27,9 +27,9 @@ class EventFinder::CLI
     def listing
         puts "Here are the upcoming top events in your area:"
         @events = EventFinder::Scraper.scrape_bands_in_town
-        @events.each.with_index(1) do |event, index|
+        # @events.each.with_index(1) do |event, index|
             # puts "#{index}. #{events.name}"
-        end
+    end
 
         def get_more_info
             puts "Please enter the number of which event you'd like more info on!"
@@ -47,7 +47,7 @@ class EventFinder::CLI
                 get_event_method
             end
         end
-    end
+    
 
     def goodbye 
         puts "Thanks for checking in, we hope to see you soon!"
