@@ -8,7 +8,7 @@ class EventFinder::CLI
         sleep 2
         listing
         sleep 2
-        get_event_method
+        get_more_info
         sleep 2
         goodbye
     end
@@ -31,18 +31,17 @@ class EventFinder::CLI
             # puts "#{index}. #{events.name}"
         end
 
-        def get_event_method
+        def get_more_info
             puts "Please enter the number of which event you'd like more info on!"
             input = gets.strip
             index = input.to_i - 1
             if index.to_i.between?(0, 17)
                 event_info = @events[index]
                 #puts #{event_info.date} - #{event_info.location}
+                #ask for me info
             elsif input == "exit"
-                
                 # list event that corresponds with the number input
                  #events date, location and url for more info
-
             else
                 puts "I don't recognize that command, please enter a valid number."
                 get_event_method
