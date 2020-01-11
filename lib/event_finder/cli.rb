@@ -4,11 +4,11 @@ class EventFinder::CLI
     def call 
         greeting
         sleep 2
-        location
-        sleep 2
+        # location
+        # sleep 2
         listing
         sleep 2
-        get_more_info
+        user_input
         sleep 2
         goodbye
     end
@@ -19,10 +19,10 @@ class EventFinder::CLI
         puts "================================================================="
     end
 
-    def location
-        puts "Please enter your city of choice:"
-        city = gets.chomp
-    end
+    # def location
+    #     puts "Please enter your city of choice:"
+    #     # city = gets.chomp
+    # end
 
     def listing
         puts "Here are the upcoming top events in your area:"
@@ -32,22 +32,11 @@ class EventFinder::CLI
         end
     end
 
-        def get_more_info
-            puts "Please enter the number of which event you'd like more info on!"
-            input = gets.strip.to_i - 1
-            # index = input.to_i - 1
-            if input.between?(0, 17)
-                event_info =  EventFinder::Event.all
-                # event_info[more_information]
-            elsif input == "exit"
-                # list event that corresponds with the number input
-                 #events date, location and url for more info
-            else
-                puts "I don't recognize that command, please enter a valid number."
-                get_event_method
-            end
-        end
-    
+    def user_input
+        puts "Please enter the number of which event you'd like more info on!"
+        input = gets.strip.to_i - 1
+        EventFinder::Event.user_event_input(input)
+    end
 
     def goodbye 
         puts "Thanks for checking in, we hope to see you soon!"

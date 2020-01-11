@@ -3,10 +3,15 @@ class EventFinder::Event
     @@all = []
     # @@info = []
 
-    attr_accessor :name, :date, :url, :location
+    attr_accessor :name, :date, :location, :url, :event_input
 
-    def initialize
-        save
+    def initialize(name, date, location, url)
+        @name = name
+        @date = date 
+        @url = url
+        @location = location
+        @@all << self 
+
     end
 
     def self.all
@@ -17,17 +22,17 @@ class EventFinder::Event
         @@info
     end
 
-    def save
-        self.class.all << self
+    def get_more_info
+            puts self.date
+            puts self.location
+            puts self.url
     end
 
-    # def self.more_information
-
-    #     all.each do |e|
-    #        @@info <<  "#{e.date} - #{e.location} for ticket prices and more information please visit #{e.url}."
-
-    #     end
-    # end
+    def self.user_event_input(input)
+        @event_input = input
+        event_object = self.all[@event_input]
+        event_object.get_more_info
+    end
 
 
 
