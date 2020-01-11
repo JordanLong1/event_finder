@@ -10,8 +10,8 @@ def self.scrape_bands_in_town
         event_object.name = event.search("h2 a").text.strip
         event_object.location = event.search("div.event-6891d84c").text.strip 
         event_object.date = event.search("div.event-02e85563").text.strip
+        # binding.pry
     puts "#{index} - #{event_object.name}"
-    # @@all << event_object
  end
 end 
 
