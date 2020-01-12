@@ -9,7 +9,6 @@ class EventFinder::CLI
         listing
         sleep 2
         user_input
-        sleep 2
         goodbye
     end
 
@@ -33,19 +32,28 @@ class EventFinder::CLI
     end
 
     def user_input
+        puts 
+        puts 
         puts "Please enter the number of which event you'd like more info on!"
+        puts 
+        puts
         input = gets.strip.to_i - 1
         EventFinder::Event.user_event_input(input)
     end
 
-    def main_menu
-        puts "If you'd like to return to the list of events press (y) if you'd like to exit type (n)"
-        back = gets.strip 
-        case back.downcase
-        when "y"
+    # def main_menu
+    #     puts "If you'd like to return to the list of events press (y) if you'd like to exit the program type (n)"
+    #     back = gets.strip 
+    #     case back.downcase
+    #     when "y"
+    #      EventFinder::Event.all 
+    #       user_input
+            #code to return to the list of all events
+    #       when "n"
+    #       
+    #       goodbye
             
-
-    end
+    # end
 
     def goodbye 
         puts 
