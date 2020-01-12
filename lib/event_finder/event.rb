@@ -1,7 +1,7 @@
 class EventFinder::Event
 
     @@all = []
-    # @@info = []
+  
 
     attr_accessor :name, :date, :location, :url, :event_input
 
