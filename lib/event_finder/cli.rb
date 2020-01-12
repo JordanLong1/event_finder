@@ -19,10 +19,10 @@ class EventFinder::CLI
         puts "================================================================="
     end
 
-    # def location
-    #     puts "Please enter your city of choice:"
-    #     # city = gets.chomp
-    # end
+    def location
+        puts "Please enter your city of choice:"
+        # city = gets.chomp
+    end
 
     def listing
         puts "Here are the upcoming top events in your area:"
@@ -38,8 +38,21 @@ class EventFinder::CLI
         EventFinder::Event.user_event_input(input)
     end
 
+    def main_menu
+        puts "If you'd like to return to the list of events press (y) if you'd like to exit type (n)"
+        back = gets.strip 
+        case back.downcase
+        when "y"
+            
+
+    end
+
     def goodbye 
-        puts "Thanks for checking in, we hope to see you soon!"
+        puts 
+        puts
+        puts "Thanks for checking into Chico's EventFinder, we hope to see you soon!"
+        puts 
+        puts 
     end
 
 
