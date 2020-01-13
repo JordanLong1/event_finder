@@ -11,7 +11,6 @@ class EventFinder::CLI
         user_input
         sleep 5
         main_menu
-        goodbye
     end
 
     def greeting
@@ -44,11 +43,17 @@ class EventFinder::CLI
     end
 
     def main_menu
+        puts 
+        puts 
+        puts 
         puts "If you'd like to return to the list of events press (y) if you'd like to exit the program type (n)"
+        puts 
+        puts 
+        puts
         back = gets.strip 
         case back.downcase
         when "y"
-         EventFinder::Event.all 
+          EventFinder::Event.all 
           sleep 2
           user_input
           when "n" 
