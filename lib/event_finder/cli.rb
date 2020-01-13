@@ -4,8 +4,8 @@ class EventFinder::CLI
     def call 
         greeting
         sleep 2
-        # location
-        # sleep 2
+        location
+        sleep 2
         listing
         sleep 2
         user_input
@@ -22,7 +22,7 @@ class EventFinder::CLI
 
     def location
         puts "Please enter your city of choice:"
-        # city = gets.chomp
+        city = gets.chomp
     end
 
     def listing
