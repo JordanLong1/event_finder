@@ -53,10 +53,10 @@ class EventFinder::CLI
         back = gets.strip 
         case back.downcase
         when "y"
-          EventFinder::Event.all 
+          listing
           sleep 2
           user_input
-          when "n" 
+        when "n" 
           goodbye
           end
             
