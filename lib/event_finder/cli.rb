@@ -14,9 +14,11 @@ class EventFinder::CLI
     end
 
     def greeting
+        puts 
         puts "================================================================="
         puts "~~~~~Hello, welcome to the Chico California EventFinder app!~~~~~"
         puts "================================================================="
+        puts
     end
 
     def location
