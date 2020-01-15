@@ -41,7 +41,13 @@ class EventFinder::CLI
         puts 
         puts
         input = gets.strip.to_i - 1
-        EventFinder::Event.user_event_input(input)
+        # EventFinder::Event.user_event_input(input)
+        if input > EventFinder::Event.all.length
+            puts "Invalid input, please try again"
+            user_input
+        else 
+            EventFinder::Event.user_event_input(input)
+        end
     end
 
     def main_menu
@@ -55,10 +61,12 @@ class EventFinder::CLI
         back = gets.strip 
         case back.downcase
         when "y"
+            EventFinder::Event.all.clear
           listing
           sleep 2
           user_input
-        when "n" 
+          main_menu
+        when "n"
           goodbye
           end
             
