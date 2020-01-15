@@ -18,10 +18,6 @@ class EventFinder::Event
         @@all
     end
 
-    def self.info
-        @@info
-    end
-
     def get_more_info
             puts "|Date|" + self.date
             puts 
