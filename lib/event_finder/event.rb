@@ -25,7 +25,7 @@ class EventFinder::Event
     def get_more_info
             puts self.date
             puts self.location
-            puts self.url
+            puts "For more information on tickets, pricing and availability please visit: " + self.url
     end
 
     def self.user_event_input(input)
