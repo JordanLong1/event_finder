@@ -18,7 +18,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install events
+    $ gem install event_finder
 
 ## Usage
 
