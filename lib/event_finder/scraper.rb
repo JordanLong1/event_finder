@@ -10,7 +10,6 @@ def self.scrape_bands_in_town
         location = event.search("div.event-6891d84c").text.strip 
         date = event.search("div.event-02e85563").text.strip
          EventFinder::Event.new(name, date, location, url)
-    # puts "#{index} - #{event_object.name}"
  end
 end 
 
