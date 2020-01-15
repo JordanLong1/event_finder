@@ -23,8 +23,10 @@ class EventFinder::Event
     end
 
     def get_more_info
-            puts self.date
-            puts self.location
+            puts "|Date|" + self.date
+            puts 
+            puts "|Location|" + self.location
+            puts
             puts "For more information on tickets, pricing and availability please visit: " + self.url
     end
 
