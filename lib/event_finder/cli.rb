@@ -19,6 +19,8 @@ class EventFinder::CLI
         puts "~~~~~Hello, welcome to the Chico California EventFinder app!~~~~~"
         puts "================================================================="
         puts
+        @events = EventFinder::Scraper.scrape_bands_in_town
+
     end
 
     def location
@@ -28,7 +30,6 @@ class EventFinder::CLI
 
     def listing
         puts "Here are the upcoming top events in your area:"
-        @events = EventFinder::Scraper.scrape_bands_in_town
         EventFinder::Event.all.each.with_index(1) do |event, index|
             puts "#{index}. #{event.name}"
         end
@@ -40,12 +41,13 @@ class EventFinder::CLI
         puts "Please enter the number of which event you'd like more info on!"
         puts 
         puts
-        input = gets.strip.to_i - 1
-        if input > EventFinder::Event.all.length
+        input = gets.strip.to_i 
+        if input <= 0 || input > EventFinder::Event.all.length || input == String
             puts "Invalid input, please try again"
             user_input
         else 
-            EventFinder::Event.user_event_input(input)
+            new_input = input - 1
+            EventFinder::Event.user_event_input(new_input)
         end
     end
 
@@ -60,7 +62,7 @@ class EventFinder::CLI
         back = gets.strip 
         case back.downcase
         when "y"
-            EventFinder::Event.all.clear
+            # EventFinder::Event.all.clear
           listing
           sleep 2
           user_input
