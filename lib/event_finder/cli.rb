@@ -41,7 +41,6 @@ class EventFinder::CLI
         puts 
         puts
         input = gets.strip.to_i - 1
-        # EventFinder::Event.user_event_input(input)
         if input > EventFinder::Event.all.length
             puts "Invalid input, please try again"
             user_input
