@@ -1,4 +1,6 @@
-# For all you concert, comedy show, and event lovers!
+# EventFinder! For all you concert, comedy show, and event lovers!
+
+Welcome to EventFinder. The EventFinder for the Chico California area(expanding on it later!) Had a long day at work? Looking to see live music, a comedy show, or anything fun!? Look no more, this EventFinder has gotten you covered with the top events as of right now in the 530 area!
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/event_finder`. To experiment with that code, run `bin/console` for an interactive prompt.
 
