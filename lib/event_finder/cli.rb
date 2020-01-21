@@ -19,13 +19,20 @@ class EventFinder::CLI
         puts "~~~~~Hello, welcome to the Chico California EventFinder app!~~~~~"
         puts "================================================================="
         puts
-        @events = EventFinder::Scraper.scrape_bands_in_town
+        EventFinder::Scraper.scrape_bands_in_town
 
     end
 
     def location
         puts "Please enter your city of choice:"
         city = gets.chomp
+        city.downcase
+        if city == "chico"
+            listing
+        else
+            puts "Please try again!"
+            location
+        end
     end
 
     def listing
@@ -62,7 +69,6 @@ class EventFinder::CLI
         back = gets.strip 
         case back.downcase
         when "y"
-            # EventFinder::Event.all.clear
           listing
           sleep 2
           user_input
@@ -83,3 +89,4 @@ class EventFinder::CLI
 
 
 end
+
